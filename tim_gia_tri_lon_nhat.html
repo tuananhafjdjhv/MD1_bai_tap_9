@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [3, 5, 1, 8, -3, 7, 8];
+    function minArray(array) {
+        let min = array[0];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i]
+            }
+        }
+        console.log(min)
+    }   minArray(arr)
+</script>
+</body>
+</html>

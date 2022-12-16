@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" oninput="dienTich(this.value)">
+<p>Dien tich</p>
+<p id="output"></p>   <br>
+<p>Chu vi</p>
+<p id="chuVi"></p>
+<script>
+    function dienTich(a) {
+        let s = a * a * Math.PI
+        document.getElementById('output').innerHTML = s;
+        chuVI(a)
+    }
+
+
+    function chuVI(a) {
+        let b = a * 2 * Math.PI;
+        document.getElementById('chuVi').innerHTML = b;
+    }
+
+
+</script>
+</body>
+</html>

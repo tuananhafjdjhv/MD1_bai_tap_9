@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input id="so" type="number"> <p id="kq"></p>-->
+<!--<button onclick="giaiThua(input)">Click me!</button>-->
+<script>
+    // let input = parseInt(document.getElementById("so").value);
+    let input = parseInt(prompt('Nhap so'))
+  function giaiThua(x){
+      let giaithua  = 1;
+      for (let j = 1; j <= x; j++) {
+           giaithua = giaithua * j;
+      }
+      return document.write(giaithua)
+  }
+  giaiThua(input);
+</script>
+</body>
+</html>

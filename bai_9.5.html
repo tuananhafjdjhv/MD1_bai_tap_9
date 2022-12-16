@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 1px;
+
+        }
+
+        td {
+            text-align: center
+        }
+
+        tr {
+            border: 1px
+        }
+    </style>
+</head>
+<body>
+<h3>Add New Product</h3>
+<label id="validate"></label>
+<input placeholder="New product" type="text" id="newProduct">
+<button style="background-color: #7da246; color: white; border-radius: 20%" onclick="addProduct()"> Add</button>
+<br>
+<br>
+<b>Display All Product</b>
+
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Product name</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+        </tr>
+        </thead>
+        <tbody id="table"></tbody>
+    </table>
+</div>
+<script>
+    let listName = []
+
+
+    // đối với biến global nó sẽ mất đi khi dừng chương trình
+    // đối với phạm vi block thì nó sẽ chết đi khi cái hàm đó chạy xong.
+    function showList() {
+        let drawTable = " ";
+        for (let i = 0; i < listName.length; i++) {
+            drawTable += `<tr>
+                             <td >${listName[i]}</td>
+                            <td><button onclick="editName(${i})">Edit</td>
+                            <td><button onclick="deleteName(${i})">Delete</td>
+                          </tr>`
+            console.log(drawTable)
+        }
+        document.getElementById('table').innerHTML = drawTable;
+    }
+
+
+    function addProduct() {
+        let updateName = document.getElementById('newProduct').value;
+        if (updateName.trim() == '') {
+            alert('Không hợp lệ')
+        } else {
+            listName.push(updateName)
+            showList()
+            document.getElementById('newProduct').value = ""
+        }
+    }
+
+    function deleteName(index) {
+        listName.splice(index, 1);
+        console.log(listName)
+        showList();
+
+    }
+
+    function editName(index) {
+        let newName = prompt('Nhập để sửa tên:')
+
+        if (newName.trim() == '') {
+            alert('chua nhap dung ko em')
+        } else {
+            listName[index] = newName
+        }
+        showList()
+    }
+</script>
+</body>
+</html>

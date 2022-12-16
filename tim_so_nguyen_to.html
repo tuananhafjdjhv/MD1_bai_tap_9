@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // IN RA 100 SỐ NGUYÊN TỐ ĐẦU TIÊN
+    //     for (let i = 2; i < 100; i++) {
+    //         let check = true
+    //         for (let j = 2; j < i - 1; j++) {
+    //             if (i % j == 0) {
+    //                 check = false
+    //                 break;
+    //             }
+    //         } if (check){
+    //             document.write(i+' ')
+    //
+    //         }
+    //     }
+    //CHUYỂN ĐỔI MÉT FEET
+    function check() {
+        let i = +document.getElementById('doF').value;
+        document.getElementById('kq').innerHTML = i * 3.279;
+        let j = +document.getElementById('doC').value;
+        document.getElementById('kq').innerHTML = j * 0.305;
+    }
+</script>
+<p>Độ F</p><input placeholder="Nhập vô đây nè" type="number" id="doF">
+<p>Độ C</p><input placeholder="Nhập vô đây nè" type="number" id="doC">
+<p>Kết quả:</p>
+<p id="kq"></p>
+<button onclick="check()">Check</button>
+</body>
+</html>
